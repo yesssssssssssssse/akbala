@@ -49,12 +49,9 @@ body::after{content:"";position:fixed;inset:auto auto -15% -40%;width:520px;heig
 .arch{position:relative;width:78%;margin:0 auto;border-radius:999px 999px 28px 28px;overflow:hidden;
   background:linear-gradient(180deg,var(--lav-50),var(--rose-50));aspect-ratio:3/4;box-shadow:var(--shadow)}
 .arch img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
-.seal{position:absolute;right:-8px;bottom:20%;width:108px;height:108px;border-radius:50%;
-  background:#fff;box-shadow:var(--shadow);display:grid;place-content:center;text-align:center;
-  border:1px dashed var(--rose);transform:rotate(-8deg)}
-.seal b{font:400 48px/.9 "CocaCola",var(--display);color:var(--rose-deep)}
-.seal span{font:400 17px/1 "CocaCola",var(--body);color:var(--rose-deep)}
-html[lang="kk"] .seal span{font-size:14px}
+.seal{position:absolute;right:-18px;bottom:14%;width:140px;height:auto;filter:drop-shadow(0 8px 18px rgba(120,80,30,.25))}
+.seal-kz,html[lang="kk"] .seal-ru{display:none}
+html[lang="kk"] .seal-kz{display:block}
 .hero-photo{position:relative;width:min(100%,340px);margin:0 auto}
 .kicker{margin-top:22px;font:600 11px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--rose-deep)}
 h1{font:500 40px/1.02 var(--display);text-transform:uppercase;letter-spacing:.05em;margin:10px 0 0}
@@ -222,7 +219,8 @@ footer img{height:40px;width:auto;margin:0 auto 10px;opacity:.85}
   <section class="hero" style="padding-top:12px">
     <div class="hero-photo rv">
       <div class="arch"><img src="img/hero.webp" alt="Акбала Сагизбек" width="547" height="921" fetchpriority="high"></div>
-      <div class="seal"><b>5</b><span data-i18n="seal">лет<br>опыта</span></div>
+      <img class="seal seal-ru" src="img/seal_ru.svg" alt="5 лет опыта" width="319" height="325">
+      <img class="seal seal-kz" src="img/seal_kz.svg" alt="5 жыл тәжірибе" width="319" height="325">
     </div>
     <p class="kicker rv" data-i18n="kicker">Детский массажист · Expert</p>
     <h1 class="rv"><span data-i18n="name1">Акбала</span><em data-i18n="name2">Сагизбек</em></h1>
@@ -265,12 +263,12 @@ footer img{height:40px;width:auto;margin:0 auto 10px;opacity:.85}
         <div class="prices"><div><small data-i18n="center">В центре</small><b>5 000 ₸</b></div><div><small data-i18n="visit">Выезд</small><b>5 500 ₸</b></div></div>
       </article>
       <article class="card rv">
-        <div class="svc-top"><div class="ph">Л</div>
+        <div class="svc-top"><img src="img/svc_logo.webp" alt="" loading="lazy" width="400" height="400">
           <div><h3 data-i18n="s2">Логомассаж</h3><p class="note" data-i18n="s2n">Поддержка развития речи</p></div></div>
         <div class="prices"><div><small data-i18n="center">В центре</small><b>6 000 ₸</b></div><div><small data-i18n="visit">Выезд</small><b>6 500 ₸</b></div></div>
       </article>
       <article class="card rv">
-        <div class="svc-top"><div class="ph">О</div>
+        <div class="svc-top"><img src="img/svc_ortho.webp" alt="" loading="lazy" width="400" height="400">
           <div><h3 data-i18n="s3">Ортопедический массаж</h3><p class="note" data-i18n="s3n">Индивидуальная программа</p></div></div>
         <div class="prices"><div><small data-i18n="center">В центре</small><b>5 000 ₸</b></div><div><small data-i18n="visit">Выезд</small><b>5 500 ₸</b></div></div>
       </article>
