@@ -18,6 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500;600;700&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
 <style>
+@font-face{font-family:"CocaCola";src:url(fonts/cocacola.otf) format("opentype");font-display:swap}
 :root{
   --bg:#FBF7F5;--rose-50:#F7E9EE;--rose:#E58AA3;--rose-deep:#C9627F;
   --lav:#B7A3DC;--lav-50:#EFEAF8;--ink:#3A2E3F;--muted:#7D6F80;--line:#EADDE3;
@@ -51,8 +52,8 @@ body::after{content:"";position:fixed;inset:auto auto -15% -40%;width:520px;heig
 .seal{position:absolute;right:-6px;bottom:22%;width:92px;height:92px;border-radius:50%;
   background:#fff;box-shadow:var(--shadow);display:grid;place-content:center;text-align:center;
   border:1px dashed var(--rose);transform:rotate(-8deg)}
-.seal b{font:600 34px/1 var(--display);color:var(--rose-deep)}
-.seal span{font:600 9.5px/1.2 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.seal b{font:400 40px/1 "CocaCola",var(--display);color:var(--rose-deep)}
+.seal span{font:400 13px/1.05 "CocaCola",var(--body);color:var(--rose-deep)}
 .hero-photo{position:relative;width:min(100%,340px);margin:0 auto}
 .kicker{margin-top:22px;font:600 11px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--rose-deep)}
 h1{font:500 40px/1.02 var(--display);text-transform:uppercase;letter-spacing:.05em;margin:10px 0 0}
@@ -142,11 +143,29 @@ summary span{font-weight:400;color:var(--muted);font-size:13px;display:block}
 .course-in p{font-size:14px;opacity:.9}
 .course-in .btn{margin-top:16px;width:100%;background:#fff;color:var(--ink)}
 
-/* gallery */
-.gal{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:24px -20px 0;padding:0 20px 8px;scrollbar-width:none}
-.gal::-webkit-scrollbar{display:none}
-.gal figure{flex:0 0 72%;scroll-snap-align:center;border-radius:24px;overflow:hidden;aspect-ratio:3/4;background:var(--rose-50)}
-.gal img{width:100%;height:100%;object-fit:cover}
+
+/* kaspi */
+.kaspi{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;margin-top:14px;padding:18px;border-radius:var(--r);
+  background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+.kaspi-badge{width:74px;height:74px;border-radius:50%;display:grid;place-items:center;text-align:center;
+  background:#F14635;color:#fff;font:700 15px/1 var(--body);letter-spacing:.02em;box-shadow:0 8px 20px rgba(241,70,53,.3)}
+.kaspi h3{font:600 17px/1.2 var(--body)}
+.kaspi p{font-size:13.5px;color:var(--muted);margin-top:4px}
+
+/* story reviews */
+.stories{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:22px -20px 0;padding:6px 20px 12px;scrollbar-width:none}
+.stories::-webkit-scrollbar{display:none}
+.story{flex:0 0 58%;aspect-ratio:9/16;scroll-snap-align:center;border:0;padding:3px;cursor:zoom-in;border-radius:26px;
+  background:linear-gradient(140deg,var(--rose),var(--lav));box-shadow:var(--shadow);transition:transform .3s}
+.story:hover{transform:translateY(-3px)}
+.story img{width:100%;height:100%;object-fit:cover;border-radius:23px;border:3px solid #fff}
+.dots{display:flex;justify-content:center;gap:6px;margin-top:6px}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:.3s}
+.dots i.on{width:18px;border-radius:6px;background:var(--rose)}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(30,22,34,.88);display:none;align-items:center;justify-content:center;padding:20px}
+.lb.open{display:flex}
+.lb img{max-height:88vh;max-width:100%;border-radius:22px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.lb button{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;font:400 26px/1 var(--body);cursor:pointer}
 
 /* reviews */
 .quote{margin-top:24px;background:#fff;border-radius:var(--r);padding:26px 22px 22px;box-shadow:var(--shadow);position:relative}
@@ -235,7 +254,7 @@ footer img{height:40px;width:auto;margin:0 auto 10px;opacity:.85}
     <p class="sub rv" data-i18n="svcS">Оздоровительный массаж у эксперта Акбалы. В центре или с выездом на дом.</p>
     <div class="svc">
       <article class="card rv">
-        <div class="svc-top"><img src="img/ff_hands.webp" alt="" loading="lazy" width="448" height="576">
+        <div class="svc-top"><img src="img/ff_hands.webp" alt="" loading="lazy" width="900" height="1205">
           <div><h3 data-i18n="s1">Детский массаж</h3><p class="note" data-i18n="s1n">Помогает правильному развитию</p></div></div>
         <div class="prices"><div><small data-i18n="center">В центре</small><b>5 000 ₸</b></div><div><small data-i18n="visit">Выезд</small><b>5 500 ₸</b></div></div>
       </article>
@@ -250,7 +269,7 @@ footer img{height:40px;width:auto;margin:0 auto 10px;opacity:.85}
         <div class="prices"><div><small data-i18n="center">В центре</small><b>5 000 ₸</b></div><div><small data-i18n="visit">Выезд</small><b>5 500 ₸</b></div></div>
       </article>
       <article class="card rv">
-        <div class="svc-top"><img src="img/ff_hydro.webp" alt="" loading="lazy" width="448" height="576">
+        <div class="svc-top"><img src="img/ff_hydro.webp" alt="" loading="lazy" width="900" height="1157">
           <div><h3 data-i18n="s4">Гидромассаж</h3><p class="note" data-i18n="s4n">Укрепление общего здоровья</p></div></div>
         <div class="prices"><div><small data-i18n="hydro">Гидромассаж</small><b>6 500 ₸</b></div><div><small data-i18n="combo">Массаж + гидро</small><b>7 500 ₸</b></div></div>
       </article>
@@ -278,6 +297,14 @@ footer img{height:40px;width:auto;margin:0 auto 10px;opacity:.85}
       </div>
     </details>
 
+    <div class="kaspi rv">
+      <div class="kaspi-badge">0·0·12</div>
+      <div>
+        <h3 data-i18n="kT">Есть рассрочка</h3>
+        <p data-i18n="kP">На все виды услуг — Kaspi Red и Kaspi Рассрочка 0-0-12. Оплачивайте так, как удобно вам.</p>
+      </div>
+    </div>
+
     <div class="tip rv">
       <h3 data-i18n="tipT">Малыш постоянно поворачивает голову в одну сторону?</h3>
       <p data-i18n="tipS">Это может быть признаком кривошеи. Своевременная помощь — залог правильного развития.</p>
@@ -294,7 +321,7 @@ footer img{height:40px;width:auto;margin:0 auto 10px;opacity:.85}
   <section id="course">
     <h2 class="h2 rv" data-i18n="crsT">Обучение</h2><i class="orn"></i>
     <div class="course rv">
-      <img src="img/ff_room.webp" alt="" loading="lazy" width="448" height="576">
+      <img src="img/ff_room.webp" alt="" loading="lazy" width="900" height="1205">
       <div class="course-in">
         <span class="tag" data-i18n="crsTag">Авторский курс</span>
         <h3>«Балалар массажының курсы»</h3>
@@ -304,27 +331,22 @@ footer img{height:40px;width:auto;margin:0 auto 10px;opacity:.85}
     </div>
   </section>
 
-  <!-- GALLERY -->
-  <section id="gallery">
-    <h2 class="h2 rv" data-i18n="galT">Галерея</h2><i class="orn"></i>
-    <div class="gal rv">
-      <figure><img src="img/g1.webp" alt="Акбала Сагизбек" loading="lazy" width="800" height="1204"></figure>
-      <figure><img src="img/g2.webp" alt="Акбала Сагизбек" loading="lazy" width="800" height="1207"></figure>
-      <figure><img src="img/ff_room.webp" alt="Кабинет массажа" loading="lazy" width="448" height="576"></figure>
-      <figure><img src="img/ff_hydro.webp" alt="Гидромассаж" loading="lazy" width="448" height="576"></figure>
-    </div>
-  </section>
-
   <!-- REVIEWS -->
   <section id="reviews">
     <h2 class="h2 rv" data-i18n="revT">Отзывы</h2><i class="orn"></i>
+    <p class="sub rv" data-i18n="revS">Сторис и сообщения от мам — листайте</p>
+    <div class="stories rv" id="stories">
+      <button class="story" data-i="0"><img src="img/rv1.webp" alt="Отзыв" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="1"><img src="img/rv2.webp" alt="Отзыв" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="2"><img src="img/rv3.webp" alt="Отзыв" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="3"><img src="img/rv4.webp" alt="Отзыв" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="4"><img src="img/rv5.webp" alt="Отзыв" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="5"><img src="img/rv6.webp" alt="Отзыв" loading="lazy" width="540" height="960"></button>
+    </div>
+    <div class="dots rv" id="dots"></div>
     <div class="quote rv">
       <p>«Очень нравится как вы работаете»</p>
       <span data-i18n="revA">— логопед, сообщение в Instagram</span>
-    </div>
-    <p class="sub rv" style="margin-top:18px" data-i18n="revS">Мамы делятся видео с сеансов:</p>
-    <div class="vids rv">
-      <span class="chip">@samal_cakes</span><span class="chip">@madinamegastars</span><span class="chip">@sa__2946</span>
     </div>
     <div class="cta-row rv">
       <a class="btn btn-ghost" href="https://www.instagram.com/stories/highlights/17919753995679938/" target="_blank" rel="noopener"><i class="ico i-ig"></i><span data-i18n="revB">Все отзывы в Instagram</span></a>
@@ -358,6 +380,7 @@ footer img{height:40px;width:auto;margin:0 auto 10px;opacity:.85}
   </footer>
 </div>
 
+<div class="lb" id="lb" role="dialog" aria-modal="true"><button type="button" aria-label="Закрыть">×</button><img alt="Отзыв"></div>
 <script>
 const WA = "77751600823";
 const T = {
@@ -377,7 +400,8 @@ const T = {
     tipT:"Балаңыз басын үнемі бір жаққа бұра ма?",tipS:"Бұл — қисық мойынның (кривошея) белгісі болуы мүмкін! Уақтылы көмек — баланың дұрыс дамуына кепіл.",
     tip1:"Бала басын бір жаққа қисайтып ұстайды",tip2:"Басын екінші жаққа бұруы қиындайды",tip3:"Емізгенде бір жағын көбірек қалайды",tip4:"Бас пішінінде асимметрия байқалуы мүмкін",
     crsT:"Оқыту",crsTag:"Авторлық курс",crsP:"Массажистер мен мамандарға арналған Ақбаланың балалар массажы курсы. Тәжірибеммен бөлісемін.",crsB:"Курс туралы білу",
-    galT:"Галерея",revT:"Пікірлер",revA:"— логопед, Instagram-дағы хабарлама",revS:"Аналар сеанстардан видео бөліседі:",revB:"Барлық пікірлер Instagram-да",
+    revT:"Пікірлер",revA:"— логопед, Instagram-дағы хабарлама",revS:"Аналардың сторис пен хабарламалары — парақтаңыз",revB:"Барлық пікірлер Instagram-да",
+    kT:"Бөліп төлеу бар",kP:"Барлық қызмет түрлеріне — Kaspi Red және Kaspi Рассрочка 0-0-12. Өзіңізге ыңғайлы тәсілмен төлей аласыз.",
     conT:"Бізді қалай табуға болады",addrK:"Мекенжай",addr:"Ақтөбе қ., Әбілқайыр хан к-сі, 67а",timeK:"Кесте",time:"Жазылу уақытын WhatsApp арқылы нақтылаңыз",
     telK:"Телефон / WhatsApp",call:"Қоңырау шалу",finT:"Сеансқа жазылыңыз",finP:"Балаңызға бағдарлама таңдаймыз",city:"Ақтөбе"
   }
@@ -400,6 +424,15 @@ document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",
 let start="ru"; try{start=localStorage.getItem("lang")||"ru"}catch(e){}
 setLang(start);
 document.getElementById("y").textContent=new Date().getFullYear();
+// story reviews: dots + lightbox
+const st=document.getElementById("stories"), dots=document.getElementById("dots"), cards=[...st.children];
+cards.forEach(()=>dots.appendChild(document.createElement("i")));
+const mark=()=>{const c=st.scrollLeft+st.clientWidth/2; let k=0,b=1e9; cards.forEach((el,i)=>{const d=Math.abs(el.offsetLeft+el.offsetWidth/2-c); if(d<b){b=d;k=i}}); [...dots.children].forEach((d,i)=>d.classList.toggle("on",i===k));};
+st.addEventListener("scroll",()=>requestAnimationFrame(mark),{passive:true}); mark();
+const lb=document.getElementById("lb");
+cards.forEach(b=>b.addEventListener("click",()=>{lb.querySelector("img").src=b.querySelector("img").src;lb.classList.add("open")}));
+lb.addEventListener("click",e=>{if(e.target!==lb.querySelector("img"))lb.classList.remove("open")});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")lb.classList.remove("open")});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12,rootMargin:"0px 0px -30px 0px"});
 document.querySelectorAll(".rv").forEach(el=>io.observe(el));
 </script>
