@@ -134,9 +134,10 @@ summary span{font-weight:400;color:var(--muted);font-size:13px;display:block}
 /* course */
 .course{position:relative;margin-top:24px;border-radius:28px;overflow:hidden;min-height:340px;display:flex;align-items:flex-end;box-shadow:var(--shadow)}
 .course img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.course::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(58,46,63,0) 25%,rgba(58,46,63,.85))}
+.course::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(58,46,63,.05) 0%,rgba(58,46,63,.55) 38%,rgba(58,46,63,.92) 100%)}
+.course-in h3,.course-in p{text-shadow:0 1px 12px rgba(30,20,35,.45)}
 .course-in{position:relative;z-index:1;padding:22px;color:#fff}
-.course-in .tag{display:inline-block;font:600 10.5px var(--body);letter-spacing:.16em;text-transform:uppercase;background:rgba(255,255,255,.2);backdrop-filter:blur(6px);padding:6px 10px;border-radius:999px}
+.course-in .tag{display:inline-block;font:600 10.5px var(--body);letter-spacing:.16em;text-transform:uppercase;background:var(--rose-deep);color:#fff;padding:6px 11px;border-radius:999px}
 .course-in h3{font:500 28px/1.1 var(--display);margin:10px 0 6px}
 .course-in p{font-size:14px;opacity:.9}
 .course-in .btn{margin-top:16px;width:100%;background:#fff;color:var(--ink)}
@@ -172,7 +173,7 @@ summary span{font-weight:400;color:var(--muted);font-size:13px;display:block}
 .final p{opacity:.9;margin-top:8px}
 .final .btn{margin-top:20px;width:100%;background:#fff;color:var(--rose-deep)}
 footer{text-align:center;padding:34px 0 40px;color:var(--muted);font-size:12px}
-footer img{height:40px;margin:0 auto 10px;opacity:.85}
+footer img{height:40px;width:auto;margin:0 auto 10px;opacity:.85}
 
 /* reveal */
 .rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
