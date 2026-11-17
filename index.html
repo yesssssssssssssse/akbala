@@ -166,7 +166,12 @@ summary span{font-weight:400;color:var(--muted);font-size:13px;display:block}
 .lb{position:fixed;inset:0;z-index:50;background:rgba(30,22,34,.88);display:none;align-items:center;justify-content:center;padding:20px}
 .lb.open{display:flex}
 .lb img{max-height:88vh;max-width:100%;border-radius:22px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
-.lb button{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;font:400 26px/1 var(--body);cursor:pointer}
+.lb button{position:absolute;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:var(--ink);font:400 26px/1 var(--body);cursor:pointer;z-index:2}
+.lb .lb-c{top:16px;right:16px}
+.lb .lb-p,.lb .lb-x{top:50%;transform:translateY(-50%);background:rgba(255,255,255,.85);font-size:30px}
+.lb .lb-p{left:10px}.lb .lb-x{right:10px}
+.lb-n{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);color:#fff;font:600 13px/1 var(--body);letter-spacing:.08em;background:rgba(0,0,0,.35);padding:7px 12px;border-radius:999px}
+.dots{flex-wrap:wrap;max-width:260px;margin-inline:auto}
 
 /* reviews */
 .quote{margin-top:24px;background:#fff;border-radius:var(--r);padding:26px 22px 22px;box-shadow:var(--shadow);position:relative}
@@ -337,12 +342,22 @@ footer img{height:40px;width:auto;margin:0 auto 10px;opacity:.85}
     <h2 class="h2 rv" data-i18n="revT">Отзывы</h2><i class="orn"></i>
     <p class="sub rv" data-i18n="revS">Сторис и сообщения от мам — листайте</p>
     <div class="stories rv" id="stories">
-      <button class="story" data-i="0"><img src="img/rv1.webp" alt="Отзыв" loading="lazy" width="540" height="960"></button>
-      <button class="story" data-i="1"><img src="img/rv2.webp" alt="Отзыв" loading="lazy" width="540" height="960"></button>
-      <button class="story" data-i="2"><img src="img/rv3.webp" alt="Отзыв" loading="lazy" width="540" height="960"></button>
-      <button class="story" data-i="3"><img src="img/rv4.webp" alt="Отзыв" loading="lazy" width="540" height="960"></button>
-      <button class="story" data-i="4"><img src="img/rv5.webp" alt="Отзыв" loading="lazy" width="540" height="960"></button>
-      <button class="story" data-i="5"><img src="img/rv6.webp" alt="Отзыв" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="0"><img src="img/rv01.webp" alt="Отзыв 1" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="1"><img src="img/rv02.webp" alt="Отзыв 2" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="2"><img src="img/rv03.webp" alt="Отзыв 3" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="3"><img src="img/rv04.webp" alt="Отзыв 4" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="4"><img src="img/rv05.webp" alt="Отзыв 5" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="5"><img src="img/rv06.webp" alt="Отзыв 6" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="6"><img src="img/rv07.webp" alt="Отзыв 7" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="7"><img src="img/rv08.webp" alt="Отзыв 8" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="8"><img src="img/rv09.webp" alt="Отзыв 9" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="9"><img src="img/rv10.webp" alt="Отзыв 10" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="10"><img src="img/rv11.webp" alt="Отзыв 11" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="11"><img src="img/rv12.webp" alt="Отзыв 12" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="12"><img src="img/rv13.webp" alt="Отзыв 13" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="13"><img src="img/rv14.webp" alt="Отзыв 14" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="14"><img src="img/rv15.webp" alt="Отзыв 15" loading="lazy" width="540" height="960"></button>
+      <button class="story" data-i="15"><img src="img/rv16.webp" alt="Отзыв 16" loading="lazy" width="540" height="960"></button>
     </div>
     <div class="dots rv" id="dots"></div>
     <div class="quote rv">
@@ -381,7 +396,7 @@ footer img{height:40px;width:auto;margin:0 auto 10px;opacity:.85}
   </footer>
 </div>
 
-<div class="lb" id="lb" role="dialog" aria-modal="true"><button type="button" aria-label="Закрыть">×</button><img alt="Отзыв"></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true"><button type="button" class="lb-c" aria-label="Закрыть">×</button><button type="button" class="lb-p" aria-label="Назад">‹</button><img alt="Отзыв"><button type="button" class="lb-x" aria-label="Далее">›</button><span class="lb-n"></span></div>
 <script>
 const WA = "77751600823";
 const T = {
@@ -431,9 +446,16 @@ cards.forEach(()=>dots.appendChild(document.createElement("i")));
 const mark=()=>{const c=st.scrollLeft+st.clientWidth/2; let k=0,b=1e9; cards.forEach((el,i)=>{const d=Math.abs(el.offsetLeft+el.offsetWidth/2-c); if(d<b){b=d;k=i}}); [...dots.children].forEach((d,i)=>d.classList.toggle("on",i===k));};
 st.addEventListener("scroll",()=>requestAnimationFrame(mark),{passive:true}); mark();
 const lb=document.getElementById("lb");
-cards.forEach(b=>b.addEventListener("click",()=>{lb.querySelector("img").src=b.querySelector("img").src;lb.classList.add("open")}));
-lb.addEventListener("click",e=>{if(e.target!==lb.querySelector("img"))lb.classList.remove("open")});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")lb.classList.remove("open")});
+const lbImg=lb.querySelector("img"), lbN=lb.querySelector(".lb-n"); let cur=0;
+const show=i=>{cur=(i+cards.length)%cards.length; lbImg.src=cards[cur].querySelector("img").src; lbN.textContent=(cur+1)+" / "+cards.length;};
+cards.forEach((b,i)=>b.addEventListener("click",()=>{show(i);lb.classList.add("open")}));
+lb.querySelector(".lb-p").addEventListener("click",e=>{e.stopPropagation();show(cur-1)});
+lb.querySelector(".lb-x").addEventListener("click",e=>{e.stopPropagation();show(cur+1)});
+lbImg.addEventListener("click",e=>{const r=lbImg.getBoundingClientRect(); show(e.clientX<r.left+r.width/3?cur-1:cur+1)});
+let sx=null; lb.addEventListener("touchstart",e=>{sx=e.touches[0].clientX},{passive:true});
+lb.addEventListener("touchend",e=>{if(sx===null)return; const dx=e.changedTouches[0].clientX-sx; if(Math.abs(dx)>40){show(dx<0?cur+1:cur-1)} sx=null});
+lb.addEventListener("click",e=>{if(e.target===lb||e.target.classList.contains("lb-c"))lb.classList.remove("open")});
+document.addEventListener("keydown",e=>{if(!lb.classList.contains("open"))return; if(e.key==="Escape")lb.classList.remove("open"); if(e.key==="ArrowRight")show(cur+1); if(e.key==="ArrowLeft")show(cur-1)});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12,rootMargin:"0px 0px -30px 0px"});
 document.querySelectorAll(".rv").forEach(el=>io.observe(el));
 </script>
