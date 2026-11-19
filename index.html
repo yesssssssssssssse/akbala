@@ -131,6 +131,48 @@ summary span{font-weight:400;color:var(--muted);font-size:13px;display:block}
 .tip li{background:#fff;border-radius:14px;padding:11px 14px 11px 40px;position:relative;font-size:14px}
 .tip li::before{content:"✓";position:absolute;left:14px;top:10px;color:var(--rose-deep);font-weight:700}
 
+/* education */
+.h3{font:600 12px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--rose-deep);text-align:center;margin:44px 0 0}
+.mosaic{display:flex;gap:12px;margin-top:26px;align-items:flex-start}
+.mc{flex:1;display:flex;flex-direction:column;gap:12px;min-width:0}
+.mc+.mc{margin-top:34px}
+.pf{position:relative;display:block;width:100%;padding:3px;border:0;border-radius:26px;overflow:hidden;cursor:zoom-in;
+  background:linear-gradient(140deg,var(--rose),var(--lav));box-shadow:var(--shadow);transition:transform .35s}
+.pf:hover{transform:translateY(-3px)}
+.pf img{width:100%;height:auto;border-radius:23px;border:3px solid #fff}
+.pf span{position:absolute;left:12px;right:12px;bottom:12px;padding:8px 10px;border-radius:14px;text-align:left;
+  font:500 11.5px/1.3 var(--body);color:var(--ink);background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.75);
+  -webkit-backdrop-filter:blur(10px) saturate(1.4);backdrop-filter:blur(10px) saturate(1.4)}
+.edu-stat{border-radius:26px;padding:22px 14px;color:#fff;text-align:center;min-height:150px;display:flex;flex-direction:column;justify-content:center;
+  background:linear-gradient(150deg,var(--rose),var(--rose-deep));box-shadow:0 14px 30px rgba(201,98,127,.32)}
+.edu-stat b{font:500 76px/.9 var(--display)}
+.edu-stat small{display:block;margin-top:10px;font:500 12px/1.4 var(--body);letter-spacing:.04em;opacity:.95}
+.edu-q{margin-top:22px;padding:24px 22px 20px;border-radius:var(--r);background:linear-gradient(160deg,var(--lav-50),var(--rose-50));position:relative}
+.edu-q::before{content:"“";position:absolute;top:-4px;left:16px;font:600 70px/1 var(--display);color:var(--rose)}
+.edu-q p{font:500 23px/1.28 var(--display);margin-top:14px}
+.edu-q span{display:block;margin-top:10px;font-size:13px;color:var(--muted)}
+.tl{list-style:none;position:relative;margin-top:22px;padding-left:30px}
+.tl::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:2px;border-radius:2px;background:linear-gradient(180deg,var(--rose),var(--lav))}
+.tl-i{position:relative;padding-bottom:24px}
+.tl-i:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:-30px;top:3px;width:18px;height:18px;border-radius:50%;background:#fff;border:2px solid var(--rose);box-shadow:0 0 0 5px rgba(229,138,163,.18)}
+.tl-dot::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--rose)}
+.tl-d{display:inline-block;font:600 11px var(--body);letter-spacing:.14em;color:var(--rose-deep);background:var(--rose-50);padding:5px 11px;border-radius:999px;margin-bottom:10px}
+.tcard{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.cert{position:relative;display:block;width:100%;padding:0;border:0;cursor:zoom-in;background:var(--rose-50)}
+.cert img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;transition:transform .5s}
+.cert:hover img{transform:scale(1.03)}
+.cert::after{content:"";position:absolute;inset:0;box-shadow:inset 0 -60px 50px -40px rgba(58,46,63,.25);pointer-events:none}
+.zoom{position:absolute;right:10px;bottom:10px;z-index:1;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:var(--ink);
+  background:rgba(255,255,255,.78);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:0 4px 14px rgba(58,46,63,.2)}
+.zoom::before{content:"";width:16px;height:16px;background:currentColor;-webkit-mask:var(--z) center/contain no-repeat;mask:var(--z) center/contain no-repeat;
+  --z:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6'/%3E%3C/svg%3E")}
+.tc-b{padding:14px 16px 16px}
+.tc-b h4{font:600 16px/1.25 var(--body)}
+.tc-s{color:var(--muted);font-size:13px;margin-top:5px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.tg{font:600 10.5px var(--body);letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--lav-50);color:var(--ink)}
+
 /* course */
 .course{position:relative;margin-top:24px;border-radius:28px;overflow:hidden;min-height:340px;display:flex;align-items:flex-end;box-shadow:var(--shadow)}
 .course img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -322,6 +364,74 @@ footer img{height:40px;width:auto;margin:0 auto 10px;opacity:.85}
     </div>
   </section>
 
+    <!-- EDUCATION -->
+  <section id="edu">
+    <h2 class="h2 rv" data-i18n="eduT">Образование</h2><i class="orn"></i>
+    <p class="sub rv" data-i18n="eduS">Дипломы и сертификаты: от практикума по детскому массажу до ортопедической клиники</p>
+
+    <div class="mosaic">
+      <div class="mc">
+        <button type="button" class="pf rv" data-edu><img src="img/edu_p1.webp" alt="Акбала с преподавателем Гульсим Усеновной" loading="lazy" width="900" height="964"><span data-i18n="eduP1">С преподавателем Гульсим Усеновной</span></button>
+        <div class="edu-stat rv"><b>5</b><small data-i18n="eduN">сертификатов и курсов<br>2022–2024</small></div>
+        <button type="button" class="pf rv" data-edu><img src="img/edu_p3.webp" alt="Акбала с коллегами и сертификатом" loading="lazy" width="900" height="1093"><span data-i18n="eduP3">Новый опыт — новая ступень</span></button>
+      </div>
+      <div class="mc">
+        <button type="button" class="pf rv" data-edu><img src="img/edu_p2.webp" alt="Акбала с дипломом и сертификатом" loading="lazy" width="900" height="1125"><span data-i18n="eduP2">Диплом и сертификат</span></button>
+        <button type="button" class="pf rv" data-edu><img src="img/edu_p4.webp" alt="Акбала с сертификатом по логомассажу" loading="lazy" width="900" height="1103"><span data-i18n="eduP4">С сертификатом по логомассажу</span></button>
+        <button type="button" class="pf rv" data-edu><img src="img/edu_p5.webp" alt="Акбала на награждении" loading="lazy" width="900" height="902"><span data-i18n="eduP5">На награждении</span></button>
+      </div>
+    </div>
+
+    <div class="edu-q rv">
+      <p data-i18n="eduQ">«Счастлива быть ученицей такого человека»</p>
+      <span data-i18n="eduQa">— Акбала о своём преподавателе Гульсим Усеновне</span>
+    </div>
+
+    <h3 class="h3 rv" data-i18n="eduC">Сертификаты</h3>
+    <ol class="tl">
+      <li class="tl-i rv">
+        <span class="tl-dot"></span><time class="tl-d">27.08.2022</time>
+        <article class="tcard">
+          <button type="button" class="cert" data-edu aria-label="Сертификат: детский массаж, 2022"><img src="img/edu_c1.webp" alt="Сертификат: детский массаж, 2022" loading="lazy" width="1200" height="900"><span class="zoom"></span></button>
+          <div class="tc-b"><h4 data-i18n="c1t">Детский массаж</h4><p class="tc-s" data-i18n="c1s">Практический курс обучения. Преподаватель — Гульсим Усеновна</p>
+            <div class="tags"><span class="tg" data-i18n="tPr">практика</span></div></div>
+        </article>
+      </li>
+      <li class="tl-i rv">
+        <span class="tl-dot"></span><time class="tl-d">17.09 – 22.10.2022</time>
+        <article class="tcard">
+          <button type="button" class="cert" data-edu aria-label="Сертификат: логопедический массаж, 2022"><img src="img/edu_c2.webp" alt="Сертификат: логопедический массаж, 2022" loading="lazy" width="1200" height="900"><span class="zoom"></span></button>
+          <div class="tc-b"><h4 data-i18n="c2t">Логопедический массаж</h4><p class="tc-s" data-i18n="c2s">Курс повышения квалификации: техники артикуляционных упражнений. Центр гуманитарной педагогики и логопедии «Indigo»</p>
+            <div class="tags"><span class="tg" data-i18n="t80">80 часов</span></div></div>
+        </article>
+      </li>
+      <li class="tl-i rv">
+        <span class="tl-dot"></span><time class="tl-d">12 – 14.06.2023</time>
+        <article class="tcard">
+          <button type="button" class="cert" data-edu aria-label="Сертификат: общий детский массаж, 2023"><img src="img/edu_c3.webp" alt="Сертификат: общий детский массаж, 2023" loading="lazy" width="1200" height="900"><span class="zoom"></span></button>
+          <div class="tc-b"><h4 data-i18n="c3t">Общий детский массаж (0–3 года)</h4><p class="tc-s" data-i18n="c3s">Биомеханика мышц, висцеральный массаж, основы логомассажа, ЛФК, фасциальные техники. Центр SA’BI Health, Астана</p>
+            <div class="tags"><span class="tg" data-i18n="t40">40 акад. часов</span></div></div>
+        </article>
+      </li>
+      <li class="tl-i rv">
+        <span class="tl-dot"></span><time class="tl-d">21.03.2024</time>
+        <article class="tcard">
+          <button type="button" class="cert" data-edu aria-label="Сертификат: детский массаж и основы ЛФК, 2024"><img src="img/edu_c4.webp" alt="Сертификат: детский массаж и основы ЛФК, 2024" loading="lazy" width="1200" height="900"><span class="zoom"></span></button>
+          <div class="tc-b"><h4 data-i18n="c4t">Детский массаж и основы лечебной физкультуры</h4><p class="tc-s" data-i18n="c4s">Обучение по утверждённой программе курса. ИП «Нурмаханбет Махамбет»</p>
+            <div class="tags"><span class="tg" data-i18n="tLfk">ЛФК</span></div></div>
+        </article>
+      </li>
+      <li class="tl-i rv">
+        <span class="tl-dot"></span><time class="tl-d">10.11.2024</time>
+        <article class="tcard">
+          <button type="button" class="cert" data-edu aria-label="Сертификат OrthoBest, 2024"><img src="img/edu_c5.webp" alt="Сертификат OrthoBest, 2024" loading="lazy" width="1200" height="900"><span class="zoom"></span></button>
+          <div class="tc-b"><h4 data-i18n="c5t">Лечебный массаж при плоскостопии и сколиозе</h4><p class="tc-s" data-i18n="c5s">Изготовление индивидуальных стелек. Ортопедическая клиника OrthoBest</p>
+            <div class="tags"><span class="tg" data-i18n="tOrt">ортопедия</span></div></div>
+        </article>
+      </li>
+    </ol>
+  </section>
+
   <!-- COURSE -->
   <section id="course">
     <h2 class="h2 rv" data-i18n="crsT">Обучение</h2><i class="orn"></i>
@@ -414,6 +524,15 @@ const T = {
     teamK:"Орталық маманы",t1:"Тоғжан — балалар массажы",t2:"Нұржамал — ересектер массажы",zone:"1 аймақ",body:"Бүкіл дене",
     tipT:"Балаңыз басын үнемі бір жаққа бұра ма?",tipS:"Бұл — қисық мойынның (кривошея) белгісі болуы мүмкін! Уақтылы көмек — баланың дұрыс дамуына кепіл.",
     tip1:"Бала басын бір жаққа қисайтып ұстайды",tip2:"Басын екінші жаққа бұруы қиындайды",tip3:"Емізгенде бір жағын көбірек қалайды",tip4:"Бас пішінінде асимметрия байқалуы мүмкін",
+    eduT:"Білім",eduS:"Дипломдар мен сертификаттар: балалар массажы практикумынан ортопедиялық клиникаға дейін",
+    eduP1:"Оқытушы Гүлсім Үсенқызымен",eduP2:"Диплом және сертификат",eduP3:"Тағы бір жаңа тәжірибе — тағы бір белес",eduP4:"Логомассаж сертификатымен",eduP5:"Марапаттау кешінде",
+    eduN:"сертификат пен курс<br>2022–2024",eduQ:"«Сіздей адамның шәкірті болған мен бақыттымын»",eduQa:"— Ақбала өзінің ұстазы Гүлсім Үсенқызы туралы",eduC:"Сертификаттар",
+    c1t:"Балалар массажы",c1s:"Практикалық оқу курсы. Оқытушы — Гүлсім Үсенқызы",
+    c2t:"Логопедиялық массаж",c2s:"Біліктілікті арттыру курсы: артикуляциялық жаттығулар техникалары. «Indigo» гуманитарлық педагогика және логопедия орталығы",
+    c3t:"Жалпы балалар массажы (0–3 жас)",c3s:"Бұлшықет биомеханикасы, висцералдық массаж, логомассаж негіздері, ЕДШ, фасциялық техникалар. SA’BI Health орталығы, Астана",
+    c4t:"Балалар массажы және емдік дене шынықтыру негіздері",c4s:"Курстың бекітілген бағдарламасы бойынша оқу. ЖК «Нұрмаханбет Махамбет»",
+    c5t:"Жалпақ табан мен сколиоздағы емдік массаж",c5s:"Жеке ұлтандар (стелька) дайындау. OrthoBest ортопедиялық клиникасы",
+    tPr:"практика",t80:"80 сағат",t40:"40 академиялық сағат",tLfk:"ЕДШ",tOrt:"ортопедия",
     crsT:"Оқыту",crsTag:"Авторлық курс",crsP:"Массажистер мен мамандарға арналған Ақбаланың балалар массажы курсы. Тәжірибеммен бөлісемін.",crsB:"Курс туралы білу",
     revT:"Пікірлер",revA:"— логопед, Instagram-дағы хабарлама",revS:"Аналардың сторис пен хабарламалары — парақтаңыз",revB:"Барлық пікірлер Instagram-да",
     kT:"Бөліп төлеу бар",kP:"Барлық қызмет түрлеріне — Kaspi Red және Kaspi Рассрочка 0-0-12. Өзіңізге ыңғайлы тәсілмен төлей аласыз.",
@@ -445,9 +564,11 @@ cards.forEach(()=>dots.appendChild(document.createElement("i")));
 const mark=()=>{const c=st.scrollLeft+st.clientWidth/2; let k=0,b=1e9; cards.forEach((el,i)=>{const d=Math.abs(el.offsetLeft+el.offsetWidth/2-c); if(d<b){b=d;k=i}}); [...dots.children].forEach((d,i)=>d.classList.toggle("on",i===k));};
 st.addEventListener("scroll",()=>requestAnimationFrame(mark),{passive:true}); mark();
 const lb=document.getElementById("lb");
-const lbImg=lb.querySelector("img"), lbN=lb.querySelector(".lb-n"); let cur=0;
-const show=i=>{cur=(i+cards.length)%cards.length; lbImg.src=cards[cur].querySelector("img").src; lbN.textContent=(cur+1)+" / "+cards.length;};
-cards.forEach((b,i)=>b.addEventListener("click",()=>{show(i);lb.classList.add("open")}));
+const lbImg=lb.querySelector("img"), lbN=lb.querySelector(".lb-n"); let cur=0, list=cards;
+const show=i=>{cur=(i+list.length)%list.length; lbImg.src=list[cur].querySelector("img").src; lbN.textContent=(cur+1)+" / "+list.length;};
+cards.forEach((b,i)=>b.addEventListener("click",()=>{list=cards;show(i);lb.classList.add("open")}));
+const edu=[...document.querySelectorAll("[data-edu]")];
+edu.forEach((b,i)=>b.addEventListener("click",()=>{list=edu;show(i);lb.classList.add("open")}));
 lb.querySelector(".lb-p").addEventListener("click",e=>{e.stopPropagation();show(cur-1)});
 lb.querySelector(".lb-x").addEventListener("click",e=>{e.stopPropagation();show(cur+1)});
 lbImg.addEventListener("click",e=>{const r=lbImg.getBoundingClientRect(); show(e.clientX<r.left+r.width/3?cur-1:cur+1)});
